@@ -38,7 +38,7 @@ Echoes the string to the command window.
 
 6 Run NMEA2TCP.py and pass in the serial port name as an argument e.g. python NMEA2TCP.py COM13 
 
-7 Once started NMEA2TCP should display the serial port and TCP port number echoed 
+7 Once started NMEA2TCP should display the serial port and TCP port number
 
 8 Run u-center and open the GPS (Reciver>Connection>Network Connection) and enter "tcp://localhost:54321"
 
