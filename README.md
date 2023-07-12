@@ -11,7 +11,7 @@ NMEA2TCP.py provides bi-directional communication:
  
 ![conectivity](https://github.com/SteveRan/NMEA2TCP/assets/314756/011b94f0-3a4a-47e4-a0e9-a037f5d6d737)
 
-NMEA2TCP.py :
+# NMEA2TCP.py :
 
 Opens a PC serial port on which it expects to find Traquito running API mode software.
 
@@ -24,7 +24,7 @@ Reads the socket looking for UBX messages from u-center and converts those to Tr
 Echoes the string to the command window.
 
 
-How to use:
+# How to use:
 
 1 Install u-blox u-center on a windows PC – see: https://www.u-blox.com/en/product/u-center
 
