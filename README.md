@@ -36,9 +36,9 @@ Echoes the string to the command window.
 
 5 Configure u-center to receive NMEA from a TCP network connection.
 
-6 Configure NMEA2TCP.py to use the Traquito serial port.
+6 Run NMEA2TCP.py and pass in the serial port name as an argument e.g. python NMEA2TCP.py COM13 
 
-7 Run NMEA2TCP.py - you should see the serial port and TCP port number echoed 
+7 Once started NMEA2TCP should display the serial port and TCP port number echoed 
 
 8 Run u-center and open the GPS (Reciver>Connection>Network Connection) and enter "tcp://localhost:54321"
 
