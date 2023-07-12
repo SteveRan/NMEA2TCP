@@ -8,16 +8,16 @@ __author__      = "Steve Randall"
 __copyright__   = "Copyright 2023, Random Engineering Ltd."
 __credits__     = [""]
 __license__     = "GPL"
-__version__     = "0.2.1"
+__version__     = "0.2.2"
 __maintainer__  = "Steve Randall"
 __email__       = "steve@randomaerospace.com"
 __status__      = "Development"
 
+import sys
 import serial
 import socket
 import threading
 
-SerialPort = 'COM13'
 LocalPort = 54321
 
 # put a lock around print to syncronise printing from both threads
@@ -51,10 +51,20 @@ def UBX_handler(name):
 
 # this main thread opens the serial and TCP socket and handles serial API modes messages from Traquito 
 # and strips out NMEA to send over the TCP socket to u-center
+# serial port name should be passed in as a program argument 
 
 if __name__ == "__main__":
 
-    ser = serial.Serial(SerialPort)                         # open JetPack serial port
+    if len(sys.argv) != 2 :
+         print('Error no serial port argument. Usage: ' + sys.argv[0] + ' SerialPort')  
+         sys.exit(1)
+
+    try:
+        ser = serial.Serial(sys.argv[1])                        # open JetPack serial port
+    except:
+        print('Cant open serial port ' + sys.argv[1])
+        sys.exit(1)
+
     print('Serial on: ' + ser.name)                         # check which port was really used
 
     host = ''                                               # Means all available interfaces
