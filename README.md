@@ -19,12 +19,21 @@ Reads the socket looking for UBX messages from u-center and converts those to
 Echoes the string to the command window.
 
 How to use:
+
 1 Install u-blox u-center on a windows PC – see: https://www.u-blox.com/en/product/u-center
+
 2 Install NMEA2TCP.py on your computer – usually this will be the same PC as above.
+
 3 Install API mode software on your Traquito – see: https://traquito.github.io/pro/apimode/
+
 4 Verify API mode is working correctly by running a terminal program like Putty.
+
 5 Configure u-center to receive NMEA from a TCP network connection.
+
 6 Configure NMEA2TCP.py to use the Traquito serial port.
+
 7 Run NMEA2TCP.py - you should see the serial port and TCP port number echoed 
+
 8 Run u-center and open the GPS (Reciver>Connection>Network Connection) and enter "tcp://localhost:54321"
+
 9 NMEA2TCP should now show the stream of messages going between Traquito and u-center
