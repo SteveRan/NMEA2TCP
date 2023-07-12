@@ -6,8 +6,8 @@ This program allows Traquito (in API mode) to work directly with u-blox u-center
 u-center may run on the same machine as NMEA2TCP – or run on a remote node in the network.
 
 NMEA2TCP.py provides bi-directional communication:
-	NMEA sentences are stripped from Traquito output and sent u-center
-	u-center HOT/WARM/COLD restart actions are mapped into Traquito API messages
+* NMEA sentences are stripped from Traquito output and sent u-center
+* u-center HOT/WARM/COLD restart actions are mapped into Traquito API messages
  
 ![conectivity](https://github.com/SteveRan/NMEA2TCP/assets/314756/011b94f0-3a4a-47e4-a0e9-a037f5d6d737)
 
