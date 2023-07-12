@@ -12,11 +12,17 @@ NMEA2TCP.py provides bi-directional communication:
 ![conectivity](https://github.com/SteveRan/NMEA2TCP/assets/314756/011b94f0-3a4a-47e4-a0e9-a037f5d6d737)
 
 NMEA2TCP.py :
+
 Opens a PC serial port on which it expects to find Traquito running API mode software.
+
 Opens a local TCP socket  - to which its expecting u-center to connect.
+
 Reads the stream of JSON messages coming from Traquito via the serial port and extracts the GPS NMEA. Writes the NMEA to the TCP socket.
-Reads the socket looking for UBX messages from u-center and converts those to    
+
+Reads the socket looking for UBX messages from u-center and converts those to Traquito API messages
+
 Echoes the string to the command window.
+
 
 How to use:
 
