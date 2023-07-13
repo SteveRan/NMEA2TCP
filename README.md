@@ -38,8 +38,8 @@ Echoes the string to the command window.
 
 6 Run NMEA2TCP.py and pass in the serial port name as an argument e.g. python NMEA2TCP.py COM13 
 
-7 Once started NMEA2TCP should display the serial port and TCP port number
+7 Once started NMEA2TCP should display the serial port, TCP port number and 'Awaiting connection'
 
-8 Run u-center and open the GPS (Reciver>Connection>Network Connection) and enter "tcp://localhost:54321"
+8 Run u-center and open the GPS (Receiver>Connection>Network Connection) and enter "tcp://localhost:54321" (or the IP and portnumber for a remote connection e.g. tcp://192.168.0.37:54321)
 
-9 NMEA2TCP should now show the stream of messages going between Traquito and u-center
+9 NMEA2TCP should now show the stream of messages going between Traquito and u-center. u-center should start showing activity.
