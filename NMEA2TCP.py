@@ -8,7 +8,7 @@ __author__      = "Steve Randall"
 __copyright__   = "Copyright 2023, Random Engineering Ltd."
 __credits__     = [""]
 __license__     = "GPL"
-__version__     = "0.2.2"
+__version__     = "0.2.3"
 __maintainer__  = "Steve Randall"
 __email__       = "steve@randomaerospace.com"
 __status__      = "Development"
@@ -73,6 +73,7 @@ if __name__ == "__main__":
     skt.bind((host, port))
     print ('Port #: ', port)
     skt.listen(1)
+    print('Awaiting connection')
     conn, addr = skt.accept()
 
     print('Connected by', addr)
