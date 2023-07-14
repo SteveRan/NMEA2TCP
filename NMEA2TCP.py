@@ -165,7 +165,7 @@ if __name__ == "__main__":
                     print(str(stripped))
 
             except Exception as e:
-                print("ERROR: all jetpack sentences should have a valid json 'type' field ..Ignoring",  stripped, e2)
+                print("ERROR: all jetpack sentences should have a valid json 'type' field ..Ignoring",  stripped, e)
 
         # if s.startswith(b'{"type":"GPS_LINE","line":"$') :  # only process GPS line
         if jsonType is not None and jsonType == "GPS_LINE":
