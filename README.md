@@ -2,6 +2,7 @@
 This program allows Traquito (in API mode) to work directly with u-blox u-center.  NMEA2TCP.py both:
 * converts between the message formats used by u-center and Traquito
 * provides the the point of interconnection (a TCP socket)
+* converts BeiDou '$BDxxx' format NMEA to 'GBxxx' format
 
 u-center may run on the same machine as NMEA2TCP – or run on a remote node in the network.
 
