@@ -9,7 +9,7 @@ __author__      = "Steve Randall"
 __copyright__   = "Copyright 2023, Random Engineering Ltd."
 __credits__     = ["Kevin Normoyle"]
 __license__     = "GPL"
-__version__     = "0.3.2"
+__version__     = "0.3.3"
 __maintainer__  = "Steve Randall"
 __email__       = "steve@randomaerospace.com"
 __status__      = "Development"
@@ -70,12 +70,17 @@ def NMEA_checksum_gen(nmeaData):
     if "*" in nmeaData:
         print("ERROR: NMEA_checksum_gen NMEA nmeaData shouldn't have any *", nmeaData)
         sys.exit(1)
-
+         
+    # the xor of the ord() won't have an int value of more than 127 (2 hex digits) because they are ascii chars 
+    # (ord is 0-127 for ascii). Could range check the ord(s) result to make sure all chars are ascii, not other unicode?
     checksumInt = reduce(operator.xor, (ord(s) for s in nmeaData), 0)
+ 
     # change it to base 16
     # return a string, but without the 0x
     # better, use string formatting to make it hex without 0x
-    checksumHex = '%x' % checksumInt
+
+    # always make sure it's 2 hex digits when there's leading 0. And use the newer string format style
+    checksumHex = '{:02X}'.format(checksumInt)
     ## print("checksumHex", checksumHex)
 
     # alternative
@@ -94,6 +99,12 @@ if __name__ == "__main__":
     checksum = NMEA_checksum_gen('GPGSV,1,1,04,10,,,41,18,,,31,27,,,36,32,,,42')
     if checksum!="75":
         print("ERROR: checksum gen test failed. checksum", checksum,  "should be '75'")
+        sys.exit(1)
+
+    # test with leading zero in checksum
+    checksum = NMEA_checksum_gen('GPGSA,A,1,,,,,,,,,,,,,25.5,25.5,25.5')
+    if checksum!="02":
+        print("ERROR: checksum gen test failed. checksum", checksum,  "should be '02'")
         sys.exit(1)
 
     if len(sys.argv) != 2 :
